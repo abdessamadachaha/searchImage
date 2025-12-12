@@ -14,7 +14,7 @@ async function searchImages() {
 
  
 
-   data.results.map(result => {
+   data.results.forEach(result => {
      
       let image = document.createElement("img");
       let link = document.createElement("a");
@@ -33,6 +33,8 @@ async function searchImages() {
 
 searchForm.addEventListener("submit", e => {
    e.preventDefault();
+   page = 1;
+   images.innerHTML = "";
    searchImages();
 })
 
